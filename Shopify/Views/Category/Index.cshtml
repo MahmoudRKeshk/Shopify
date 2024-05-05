@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Category>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created On</th>
+            <th scope="col">LastUpdated On</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var category in @Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>@category.IsDeleted</td>
+                <td>@category.CreatedOn</td>
+                <td>@category.UpdatedOn</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Toggle Status</a></li>
+                        </ul>
+                    </div>
+                </td>   
+            </tr>
+        }
+    </tbody>
+</table>
